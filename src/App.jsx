@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 // import ScrollToTop from "./components/ScrollToTop";
 import DefaultLayout from "./layouts/DefaultLayout";
+import AdminLayout from "./layouts/AdminLayout";
 
 const router = createBrowserRouter([
   {
@@ -10,6 +11,20 @@ const router = createBrowserRouter([
       {
         index: true,
         lazy: () => import("./pages/admin/authPage"),
+      },
+      {
+        path: "dashboard",
+        element: <AdminLayout />,
+        children: [
+          {
+            index: true,
+            lazy: () => import("./pages/admin/dashboard/overviewPage"),
+          },
+          {
+            path: "posts",
+            lazy: () => import("./pages/admin/dashboard/postsPage"),
+          },
+        ],
       },
     ],
   },

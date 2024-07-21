@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --text-color: #343a40;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 .bg {
   position: fixed;
   width: 100%;
@@ -47,4 +55,13 @@
 
 .positive-btn {
   @apply normal-btn;
+}
+
+.normal-navlink {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  @apply p-4 font-semibold px-4 py-2   w-full;
+  @apply hover:bg-[rgba(255,255,255,0.2)];
+  @apply active:bg-[rgba(255,255,255,0.4)];
 }
